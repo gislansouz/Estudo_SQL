@@ -50,3 +50,8 @@ SELECT Projnumero FROM projeto,funcionario,departamento WHERE dnum=dnr AND dnume
 Recuperar nome completo de todos os funcionários no departamento 5, cujo salário esteja entre R$ 30.000,00 e R$ 40.000,00.
 
 SELECT pnome,minicial,unome FROM funcionario,departamento WHERE dnr=dnumero AND dnr=5 AND salario >= 30000 AND salario <=4000;
+
+
+SELECT count(*) FROM funcionario,departamento WHERE dnr=dnumero AND dnome='Matriz';
+
+SELECT t.pnr,p.projnome, count(*) as num_funcionarios FROM projeto p,TRABALHA_EM t WHERE t.pnr=p.Projnumero  GROUP BY t.pnr,p.projnome;
